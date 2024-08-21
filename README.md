@@ -36,5 +36,7 @@ NB: for baremetal build, change the npm packages installation location (e.g. [he
 
 ## Demo
 
-![Screenshots](assets/make.gif)
+<p align="center">
+  <img width="680" height="960" src="https://raw.githubusercontent.com/eric-glb/build-revision-invite-2018/main/assets/make.gif">
+</p>
 
