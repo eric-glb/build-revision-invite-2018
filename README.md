@@ -5,10 +5,9 @@ Source: https://github.com/ninjadev/revision-invite-2018
 ## Prerequisites
 
 - Linux
-- node installed (if baremetal build)
+- node.js and npm installed (if baremetal build)
 - docker installed (if docker build)
 - [GNU Make](https://www.gnu.org/software/make/)
-
 
 ## Usage
 
@@ -26,7 +25,8 @@ make help
 
 ```text
   make [ help | all | prerequisites | build | run | serve | clean |
-         docker-build | docker-stop | docker-run | docker-clean | clean-all ]
+         docker-build | docker-run | docker-build-dev | docker-run-dev | docker-stop |
+         docker-clean | clean-all ]
 ```
 
 Cf. [Makefile](./Makefile) to see the targets details.
@@ -34,7 +34,7 @@ Cf. [Makefile](./Makefile) to see the targets details.
 
 NB: for baremetal build, change the npm packages installation location (e.g. [here](https://vasu-vanka.medium.com/npm-change-package-installation-location-73350ec42761)) 
 
-## Screenshots of the demo
+## Demo
 
-![Screenshots](./collage.jpg)
+![Screenshots](assets/make.gif)
 

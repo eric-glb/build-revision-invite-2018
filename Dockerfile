@@ -1,9 +1,9 @@
 FROM node:18 AS ninjadev-nin
-RUN npm config set fund false audit false update-notifier false loglevel error \
-&&  npm install -g ninjadev-nin@v24.0.0
+SHELL ["/bin/bash", "-c"]
+RUN npm config set fund false audit false update-notifier false loglevel notice \
+&&  npm_config_loglevel=silent npm install -g ninjadev-nin@v24.0.0
 
 FROM ninjadev-nin AS builder
-SHELL ["/bin/bash", "-c"]
 COPY revision-invite-2018 /app
 WORKDIR /app
 RUN nin compile --no-closure-compiler --no-tracking \
