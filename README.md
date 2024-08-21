@@ -36,5 +36,5 @@ NB: for baremetal build, change the npm packages installation location (e.g. [he
 
 ## Screenshots of the demo
 
-![Screenshots](revision-invite-2018/collage.jpg)
+![Screenshots](./collage.jpg)
 
