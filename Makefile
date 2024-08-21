@@ -13,7 +13,7 @@ NIN_PKG = ninjadev-nin@24.0.0
 CONTAINER_NAME = revision-invite-2018
 
 define heredoc_help
-echo -en "${YELLOW}${SEP}"
+echo -e "\n${YELLOW}${SEP}"
 cat <<'EOF'
 
   make [ help | all | prerequisites | build | run | serve | clean |
@@ -22,7 +22,7 @@ cat <<'EOF'
 
 EOF
 
-echo -e "${SEP}${CLEAR}"
+echo -e "${SEP}${CLEAR}\n"
 endef
 export heredoc_help
 
@@ -86,15 +86,15 @@ docker-stop:
 
 docker-run: docker-stop
 	@docker images --format "{{.Repository}}:{{.Tag}}" | grep -q "${CONTAINER_NAME}:latest" || make docker-build
-	@echo -e "\n${SEP}\n${GREEN}Run docker container ${CONTAINER_NAME}...${CLEAR}\n${SEP}\n"
-	docker run --rm --detach --publish=8080:8080 --name=${CONTAINER_NAME} ${CONTAINER_NAME}
-	@echo -e "\n${SEP}\nConnect to ${GREEN}http://127.0.0.1:8080${CLEAR}\n\nType: \`${YELLOW}make docker-stop${CLEAR}\` to stop this container.\n${SEP}\n"
+	@echo -e "\n${SEP}\n${GREEN}Run docker container ${CONTAINER_NAME}...${CLEAR}\n"
+	@docker run --rm --detach --publish=8080:8080 --name=${CONTAINER_NAME} ${CONTAINER_NAME} &>/dev/null
+	@echo -e "Connect to ${GREEN}http://127.0.0.1:8080${CLEAR}\n\nType: \`${YELLOW}make docker-stop${CLEAR}\` to stop this container.\n${SEP}\n"
 
 docker-run-dev: docker-stop
 	@docker images --format "{{.Repository}}:{{.Tag}}" | grep -q "${CONTAINER_NAME}-dev:latest" || make docker-build-dev
-	@echo -e "\n${SEP}\n${GREEN}Run docker container ${CONTAINER_NAME}-dev...${CLEAR}\n${SEP}\n"
-	docker run --rm --detach --publish=8080:8080 --volume=$$PWD/revision-invite-2018:/app --name=${CONTAINER_NAME}-dev ${CONTAINER_NAME}-dev
-	@echo -e "\n${SEP}\nConnect to ${GREEN}http://127.0.0.1:8080${CLEAR}\n\nType: \`${YELLOW}make docker-stop${CLEAR}\` to stop this container.\n${SEP}\n"
+	@echo -e "\n${SEP}\n${GREEN}Run docker container ${CONTAINER_NAME}-dev...${CLEAR}\n"
+	@docker run --rm --detach --publish=8080:8080 --volume=$$PWD/revision-invite-2018:/app --name=${CONTAINER_NAME}-dev ${CONTAINER_NAME}-dev &>/dev/null
+	@echo -e "Connect to ${GREEN}http://127.0.0.1:8080${CLEAR}\n\nType: \`${YELLOW}make docker-stop${CLEAR}\` to stop this container.\n${SEP}\n"
 
 
 

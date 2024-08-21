@@ -17,4 +17,4 @@ Enter
 Sleep 25s
 Type "make docker-run"
 Enter
-Sleep 4s
+Sleep 8s
