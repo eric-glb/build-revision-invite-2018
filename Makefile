@@ -18,7 +18,7 @@ cat <<'EOF'
 
   make [ help | all | prerequisites | build | run | serve | clean |
          docker-build | docker-run | docker-build-dev | docker-run-dev | 
-         docker-stop | docker-clean | clean-all ]
+         docker-stop | docker-clean | clean-all | make.gif ]
 
 EOF
 

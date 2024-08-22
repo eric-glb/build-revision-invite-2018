@@ -1,7 +1,6 @@
 FROM node:18 AS ninjadev-nin
 SHELL ["/bin/bash", "-c"]
-RUN npm config set fund false audit false update-notifier false loglevel notice \
-&&  npm_config_loglevel=silent npm install -g ninjadev-nin@v24.0.0
+RUN npm_config_loglevel=silent npm install --no-fund --no-audit -g ninjadev-nin@v24.0.0
 
 FROM ninjadev-nin AS builder
 COPY revision-invite-2018 /app

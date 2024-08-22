@@ -17,4 +17,12 @@ Enter
 Sleep 25s
 Type "make docker-run"
 Enter
-Sleep 8s
+Sleep 5s
+Type "carbonyl http://127.0.0.1:8080"
+Enter
+Sleep 10s
+Ctrl+C
+Sleep 2s
+Type "make docker-stop"
+Enter
+Sleep 5s
